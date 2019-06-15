@@ -1,0 +1,31 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.diplomska</groupId>
+		<artifactId>diplomska-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
+	<artifactId>diplomska-jpeg-encoder-new</artifactId>
+	<packaging>jar</packaging>
+
+	<name>diplomska-jpeg-encoder-new</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<main-class.name>org.uni.feri.jpeg.JpegMain</main-class.name>
+	</properties>
+
+	<dependencies>
+		
+		<!-- diplomska-util -->
+		<dependency>
+			<groupId>org.diplomska</groupId>
+			<artifactId>diplomska-util</artifactId>
+		</dependency>
+
+	</dependencies>
+</project>

@@ -1,0 +1,9 @@
+Conversion RGB -> YCrCb: http://www.impulseadventure.com/photo/jpeg-color-space.html
+Multimedia resource: http://users.ece.utexas.edu/~ryerraballi/MSB/pdfs/
+Very good resource for DCT: http://www.whydomath.org/node/wavlets/dct.html
+Very good Huffman algorithm description: http://www.impulseadventure.com/photo/jpeg-huffman-coding.html
+http://cs.stanford.edu/people/eroberts/courses/soco/projects/data-compression/lossy/jpeg/dct.htm
+http://www.whydomath.org/node/wavlets/basicjpg.html
+http://www.ams.org/samplings/feature-column/fcarc-image-compression
+http://disp.ee.ntu.edu.tw/meeting/%E4%BF%9D%E8%A8%80/Basic%20Image%20Compression%20Algorithm%20and%20Introduction%20of%20JPEG%20Standard/Basic%20Image%20Compression%20Algorithm%20and%20Introduction%20of%20JPEG%20Standard.pdf
+http://www.lokminglui.com/dct.pdf

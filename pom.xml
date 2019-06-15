@@ -1,0 +1,209 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+ <modelVersion>4.0.0</modelVersion>
+
+ <groupId>org.diplomska</groupId>
+ <artifactId>diplomska-parent</artifactId>
+ <version>0.0.1-SNAPSHOT</version>
+ <packaging>pom</packaging>
+
+ <name>diplomska-parent</name>
+ <url>http://diplomska.stego.org</url>
+
+ <properties>
+  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<!-- dependencies version -->
+  <project.version>0.0.1-SNAPSHOT</project.version>
+  <commons-cli.version>1.3.1</commons-cli.version>
+  <commons-io.version>1.3.2</commons-io.version>
+  <jblas.version>1.2.3</jblas.version>
+  <junit.version>4.12</junit.version>
+  <logback.version>1.1.3</logback.version>
+  <perf4j.version>0.9.16</perf4j.version>
+  <slf4j-api.version>1.7.12</slf4j-api.version>
+  <maven-jar-plugin.version>2.6</maven-jar-plugin.version>
+  <main-class.name></main-class.name>
+  <java.version>1.8</java.version>
+ </properties>
+
+ <dependencies>
+		<!-- JUnit -->
+  <dependency>
+   <groupId>junit</groupId>
+   <artifactId>junit</artifactId>
+   <version>${junit.version}</version>
+   <scope>test</scope>
+  </dependency>
+ </dependencies>
+
+ <dependencyManagement>
+  <dependencies>
+
+			<!-- slf4j - api 
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>${slf4j-api.version}</version>
+			</dependency>
+         -->
+         
+			<!-- logback -->
+   <dependency>
+    <groupId>ch.qos.logback</groupId>
+    <artifactId>logback-classic</artifactId>
+    <version>${logback.version}</version>
+   </dependency>
+
+   <!-- perf4j -->
+   <dependency>
+    <groupId>org.perf4j</groupId>
+    <artifactId>perf4j</artifactId>
+    <version>${perf4j.version}</version>
+   </dependency>
+
+   <!-- Commons - CLI -->
+   <dependency>
+    <groupId>commons-cli</groupId>
+    <artifactId>commons-cli</artifactId>
+    <version>${commons-cli.version}</version>
+   </dependency>
+   
+   <!-- Commons - IO -->
+   <dependency>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-io</artifactId>
+    <version>${commons-io.version}</version>
+   </dependency>
+            
+
+   <!-- JBlas -->
+   <dependency>
+    <groupId>org.jblas</groupId>
+    <artifactId>jblas</artifactId>
+    <version>${jblas.version}</version>
+   </dependency>
+
+   <dependency>
+    <groupId>org.diplomska</groupId>
+    <artifactId>diplomska-util</artifactId>
+    <version>${project.version}</version>
+   </dependency>
+
+   <dependency>
+    <groupId>org.diplomska</groupId>
+    <artifactId>diplomska-stego-algorithms</artifactId>
+    <version>${project.version}</version>
+   </dependency>
+
+   <dependency>
+    <groupId>org.diplomska</groupId>
+    <artifactId>diplomska-jpeg-encoder</artifactId>
+    <version>${project.version}</version>
+   </dependency>
+
+   <dependency>
+    <groupId>org.diplomska</groupId>
+    <artifactId>diplomska-jpeg-encoder-new</artifactId>
+    <version>${project.version}</version>
+   </dependency>
+
+   <dependency>
+    <groupId>org.diplomska</groupId>
+    <artifactId>diplomska-jpeg-decoder</artifactId>
+    <version>${project.version}</version>
+   </dependency>
+  </dependencies>
+ </dependencyManagement>
+
+ <modules>
+  <module>diplomska-util</module>
+  <module>diplomska-stego-algorithms</module>
+  <module>diplomska-jpeg-encoder</module>
+  <module>diplomska-jpeg-encoder-new</module>
+  <module>diplomska-jpeg-decoder</module>
+  <module>diplomska-stego-program</module>
+ </modules>
+
+ <build>
+  <pluginManagement>
+   <plugins>
+    <plugin>
+     <groupId>org.apache.maven.plugins</groupId>
+     <artifactId>maven-jar-plugin</artifactId>
+     <version>${maven-jar-plugin.version}</version>
+					<!-- nothing here -->
+    </plugin>
+    <plugin>
+     <groupId>org.apache.maven.plugins</groupId>
+     <artifactId>maven-assembly-plugin</artifactId>
+     <version>2.5.5</version>
+     <configuration>
+      <descriptorRefs>
+       <descriptorRef>jar-with-dependencies</descriptorRef>
+      </descriptorRefs>
+      <archive>
+       <manifest>
+        <mainClass>${main-class.name}</mainClass>
+       </manifest>
+      </archive>
+     </configuration>
+     <executions>
+      <execution>
+       <phase>package</phase>
+       <goals>
+        <goal>single</goal>
+       </goals>
+      </execution>
+     </executions>
+    </plugin>
+   </plugins>
+  </pluginManagement>
+
+  <plugins>
+   <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-compiler-plugin</artifactId>
+    <version>3.3</version>
+    <configuration>
+     <source>${java.version}</source>
+     <target>${java.version}</target>
+    </configuration>
+   </plugin>
+  </plugins>
+ </build>
+<!-- 
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"> 
+   <modelVersion>4.0.0</modelVersion>
+   <parent>...</parent>
+   <groupId>...</groupId> 
+   <artifactId>...</artifactId>
+   <version>...</version>
+   <packaging>...</packaging> 
+   <name>...</name>
+   <description>...</description>
+   <url>...</url>
+   <inceptionYear>...</inceptionYear> 
+   <licenses>...</licenses>
+   <organization>...</organization>
+   <developers>...</developers> 
+   <contributors>...</contributors>
+   <properties>...</properties>
+   <dependencies>...</dependencies> 
+   <dependencyManagement>...</dependencyManagement>
+   <modules>...</modules>
+   <build>...</build> 
+   <reporting>...</reporting>
+   <issueManagement>...</issueManagement>
+   <ciManagement>...</ciManagement> 
+   <mailingLists>...</mailingLists>
+   <scm>...</scm>
+   <prerequisites>...</prerequisites> 
+   <repositories>...</repositories>
+   <pluginRepositories>...</pluginRepositories> 
+   <distributionManagement>...</distributionManagement>
+   <profiles>...</profiles> 
+</project> 
+-->
+</project>
